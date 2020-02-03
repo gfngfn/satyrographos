@@ -5,22 +5,18 @@ let outf = Format.std_formatter
 
 let pin_list () =
   Compatibility.optin ();
-  let Environment.{ repo; reg=_; } = Setup.read_repo () in
+  let repo = (Setup.read_repo ()).repo in
   [%derive.show: string list] (Repository.list repo) |> print_endline
 let pin_list_command =
   let open Command.Let_syntax in
   Command.basic
     ~summary:"List installed libraries (experimental)"
-    [%map_open
-      let _ = args (* ToDo: Remove this *)
-      in
-      fun () ->
-        pin_list ()
-    ]
+    (return (fun () ->
+      pin_list ()))
 
 let pin_dir p () =
   Compatibility.optin ();
-  let Environment.{ repo; reg=_; } = Setup.read_repo () in
+  let repo = (Setup.read_repo ()).repo in
   Repository.directory repo p |> print_endline
 let pin_dir_command =
   let open Command.Let_syntax in
@@ -59,7 +55,7 @@ let pin_add_command =
 
 let pin_remove p () =
   Compatibility.optin ();
-  let Environment.{ repo; reg=_; } = Setup.read_repo () in
+  let repo = (Setup.read_repo ()).repo in
   (* TODO remove the library *)
   Repository.remove repo p;
   Printf.printf "Removed %s\n" p
