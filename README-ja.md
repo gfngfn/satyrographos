@@ -19,7 +19,7 @@ OPAMにより管理されているSatyrographosライブラリは、
 `satysfi-`で始まる名前でインストール可能になっています。これは、
 OCaml用のライブラリ等と区別する為です。
 
-例として、［SATySFi-Fonts-Theano](https://github.com/na4zagin3/SATySFi-fonts-theano)を利用したい場合は、
+例として、［SATySFi-Fonts-Theano](https://github.com/na4zagin3/SATySFi-fonts-theano) を利用したい場合は、
 
 ```sh
 opam install satysfi-fonts-theano
