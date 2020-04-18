@@ -9,3 +9,7 @@ env:
   - OCAML_VERSION=4.10
 os:
   - linux
+jobs:
+  allow_failures:
+    # We don't need to ignore failures once OPAM 2.0.7 is released.
+    - env: OCAML_VERSION=4.10
