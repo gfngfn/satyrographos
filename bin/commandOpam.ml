@@ -3,8 +3,6 @@ open Core
 module Process = Shexp_process
 module P = Process
 
-module StringMap = Map.Make(String)
-
 let default_script_path () =
   Filename.concat (FileUtil.pwd ()) "Satyristes"
 
