@@ -5,9 +5,6 @@ module P = Process
 
 module StringMap = Map.Make(String)
 
-let outf = Format.std_formatter
-
-
 let default_script_path () =
   Filename.concat (FileUtil.pwd ()) "Satyristes"
 
