@@ -1,11 +1,7 @@
 open Core
 open Satyrographos
 module Autogen = Satyrographos_autogen
-
-module StringSet = Set.Make(String)
-
-(* TODO Abstract this *)
-module StringMap = Map.Make(String)
+open Types
 
 (** Returns transitively-required libraries from the given OPAM registry, Satyrographos registry, and SATySFi dist directory.
 
